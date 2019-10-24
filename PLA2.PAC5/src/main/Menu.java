@@ -16,20 +16,24 @@ public class Menu {
 		System.out.println("Select difficulty: ");
 		System.out.println("a) Easy (50 moves)");
 		System.out.println("b) Medium (30 moves)");
-		System.out.println("c) Hard (15 moves)");
-		String response = reader.nextLine();
+		System.out.println("c) Hard (15 moves)");		
+		while(true) {
+			String response = reader.nextLine();
 		if(response.contentEquals("a")) {
 			Dungeon d = new Dungeon(10,10,5,50,true);
 			d.run(reader);
-		}else if(response.contentEquals("a")) {
+			break;
+		}else if(response.contentEquals("b")) {
 			Dungeon d = new Dungeon(10,10,5,30,true);
 			d.run(reader);
-	}else if(response.contentEquals("a")) {
+			break;
+	}else if(response.contentEquals("c")) {
 		Dungeon d = new Dungeon(10,10,5,15,true);
 		d.run(reader);
+		break;
 	}else {
-		System.out.println("Incorrect. Write a, b or c.");
-		response = reader.nextLine();
+		System.out.println("Incorrect. Select a, b or c.");
+	}
 	}
 }
 }
